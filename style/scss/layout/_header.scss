@@ -1,0 +1,27 @@
+@import "../utils/colors";
+
+header {
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: $darkColor;
+
+    a {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 48px;
+            margin-right: 1rem;
+        }
+
+        p {
+            font-size: 28px;
+            font-weight: 700;
+            color: $white;
+            text-transform: uppercase;
+        }
+    }
+}

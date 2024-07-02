@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style/style.css" />
+        <title>Pet Project</title>
+    </head>
+
+    <body>
+        <header>
+            <a href="/index.html">
+                <img src="./assets/Cute-Dog-icon-2.png" alt="Logo" />
+                <p>Pet Project</p>
+            </a>
+        </header>
+
+        <main class="pokemonMain">
+            <section class="pokemonSection">
+                <form onsubmit="pokemonSearch(event)">
+                    <h2>Pokédex</h2>
+                    <p>Entrez le nom d'un pokémon (en anglais)</p>
+                    <input
+                        type="search"
+                        name="search"
+                        id="search"
+                        placeholder="Pokedex"
+                    />
+                </form>
+                <div class="card">
+                    <!-- pokemonCard -->
+                    <div class="pokemonCard__header">
+                        <p id="pokemonId"></p>
+                        <img src="" alt="" />
+                        <p id="pokemonName"></p>
+                        <p id="energyType"></p>
+                    </div>
+                    <div class="pokemonCard__stats">
+                        <ul>
+                            <li id="hp">
+                                <h3>HP :</h3>
+                                <p></p>
+                            </li>
+                            <li id="attack">
+                                <h3>attack :</h3>
+                                <p></p>
+                            </li>
+                            <li id="defense">
+                                <h3>defense :</h3>
+                                <p></p>
+                            </li>
+                            <li id="special-attack">
+                                <h3>special attack :</h3>
+                                <p></p>
+                            </li>
+                            <li id="special-defense">
+                                <h3>special defense :</h3>
+                                <p></p>
+                            </li>
+                            <li id="speed">
+                                <h3>speed :</h3>
+                                <p></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+
+    <script src="./scripts/pokemon.js"></script>
+</html>

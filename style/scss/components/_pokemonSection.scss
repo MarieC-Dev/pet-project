@@ -1,0 +1,112 @@
+.pokemonMain {
+    min-height: calc(100vh - 6rem);
+    background-image: url("../../../assets/pokemon-ball-house.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.pokemonSection {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+    h2,
+    h3,
+    li,
+    p {
+        text-align: center;
+    }
+
+    form {
+        width: 600px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 1.5rem;
+        background-color: $white;
+        box-shadow: $shadow;
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid black;
+            border-radius: 5rem;
+            text-align: center;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .pokemonCard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+        background-color: white;
+        box-shadow: 0 5px 15px grey;
+        border-radius: 1.5rem;
+
+        p {
+            text-transform: capitalize;
+        }
+
+        &__header {
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2rem;
+
+            #pokemonName {
+                font-weight: 700;
+            }
+
+            img {
+                width: 80px;
+                height: auto;
+                margin: 1rem;
+            }
+        }
+
+        &__stats {
+            width: 600px;
+            padding: 1rem 3rem;
+            margin-top: 2rem;
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+
+                li {
+                    width: 210px;
+                    display: flex;
+                    margin: 0.5rem 1rem;
+
+                    h3 {
+                        margin-right: 0.5rem;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card {
+    display: none;
+}

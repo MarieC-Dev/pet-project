@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html,
+body {
+  min-height: 100vh;
+  height: auto;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: #e8e8e8;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  padding: 5rem 0;
+}
+@media screen and (max-width: 450px) {
+  section {
+    width: 90%;
+  }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li,
+a {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  padding-block-start: 0;
+  padding-block-end: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: #0013a1;
+}
+header a {
+  display: flex;
+  align-items: center;
+}
+header a img {
+  height: 48px;
+  margin-right: 1rem;
+}
+header a p {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.homePage .homeSection {
+  width: 1200px;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 25%));
+  grid-template-rows: auto;
+  justify-content: center;
+  padding: 6rem 7rem;
+  margin: 0 auto;
+}
+.homePage .homeSection .homeProjectCard {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin: 0 auto 2rem auto;
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0px 7px 15px 5px #b6b6b6;
+}
+.homePage .homeSection .homeProjectCard img {
+  width: auto;
+  height: 64px;
+}
+
+.pokemonMain {
+  min-height: calc(100vh - 6rem);
+  background-image: url("../../../assets/pokemon-ball-house.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.pokemonSection {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+.pokemonSection h2,
+.pokemonSection h3,
+.pokemonSection li,
+.pokemonSection p {
+  text-align: center;
+}
+.pokemonSection form {
+  width: 600px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0px 7px 15px 5px #b6b6b6;
+}
+.pokemonSection form h2 {
+  margin-bottom: 1rem;
+}
+.pokemonSection form p {
+  margin-bottom: 1rem;
+}
+.pokemonSection form input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  border-radius: 5rem;
+  text-align: center;
+}
+.pokemonSection form input:focus {
+  outline: none;
+}
+.pokemonSection .pokemonCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: white;
+  box-shadow: 0 5px 15px grey;
+  border-radius: 1.5rem;
+}
+.pokemonSection .pokemonCard p {
+  text-transform: capitalize;
+}
+.pokemonSection .pokemonCard__header {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.pokemonSection .pokemonCard__header #pokemonName {
+  font-weight: 700;
+}
+.pokemonSection .pokemonCard__header img {
+  width: 80px;
+  height: auto;
+  margin: 1rem;
+}
+.pokemonSection .pokemonCard__stats {
+  width: 600px;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+}
+.pokemonSection .pokemonCard__stats ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.pokemonSection .pokemonCard__stats ul li {
+  width: 210px;
+  display: flex;
+  margin: 0.5rem 1rem;
+}
+.pokemonSection .pokemonCard__stats ul li h3 {
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+}
+
+.card {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,16 @@
+// BASE
+@import "./base/general";
+
+// UTILS
+@import "./utils/colors";
+@import "./utils/variables";
+
+// // LAYOUT
+@import "./layout/header";
+@import "./layout/homePage";
+// @import "./layout/footer";
+
+// // COMPONENTS
+@import "./components/pokemonSection";
+
+// PAGES
