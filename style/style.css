@@ -137,6 +137,9 @@ header a p {
 }
 .pokemonSection form {
   width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 1.5rem;
@@ -150,14 +153,18 @@ header a p {
   margin-bottom: 1rem;
 }
 .pokemonSection form input {
-  width: 100%;
-  padding: 0.5rem 1rem;
+  width: 80%;
+  padding: 1rem 2rem;
+  font-size: 18px;
   border: 1px solid black;
-  border-radius: 5rem;
+  border-radius: 0.5rem;
   text-align: center;
 }
 .pokemonSection form input:focus {
   outline: none;
+}
+.pokemonSection form input::placeholder {
+  font-size: 16px;
 }
 .pokemonSection .pokemonCard {
   display: flex;
@@ -210,6 +217,149 @@ header a p {
 
 .card {
   display: none;
+}
+
+.azertypeSection {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem auto;
+  background-color: #f7a100;
+  box-shadow: 0px 7px 15px 5px #b6b6b6;
+  border-radius: 1.5rem;
+}
+.azertypeSection h2,
+.azertypeSection h3,
+.azertypeSection p,
+.azertypeSection button,
+.azertypeSection label {
+  text-align: center;
+  color: #ffffff;
+}
+.azertypeSection button {
+  padding: 0.75rem 1.5rem;
+  font-size: 16px;
+  background-color: #f7a100;
+  border: 2px solid #ffffff;
+  border-radius: 5rem;
+}
+.azertypeSection .titles h2 {
+  font-size: 32px;
+  margin-bottom: 1rem;
+}
+.azertypeSection .titles p {
+  font-size: 20px;
+}
+.azertypeSection .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+.azertypeSection .content > p {
+  margin-bottom: 1rem;
+}
+.azertypeSection .content .options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.azertypeSection .content .options div {
+  margin: 0 1rem;
+}
+.azertypeSection .content h3 {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #f7a100;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 1rem;
+}
+.azertypeSection .content form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto;
+}
+.azertypeSection .content form input {
+  width: 82%;
+  padding: 0.75rem 1.5rem;
+  font-size: 16px;
+  border: 0;
+  border-radius: 1rem;
+}
+.azertypeSection .content .score {
+  margin: 1rem 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+.azertypeSection .content .searchBtn {
+  width: 30%;
+  margin: 1rem auto 0 auto;
+}
+
+.calculatorBody header {
+  background-color: #2c2d38;
+  border-bottom: 1px solid white;
+}
+
+.calculatorMain {
+  min-width: 100vh;
+  min-height: calc(100vh - 6rem);
+  background-color: #2c2d38;
+}
+.calculatorMain .calculatorSection {
+  display: flex;
+  justify-content: center;
+}
+.calculatorMain .calculatorSection .calculator {
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.8), -3px -3px 10px 2px rgba(255, 255, 255, 0.2);
+}
+.calculatorMain .calculatorSection .calculator .calculatorLine {
+  display: flex;
+}
+.calculatorMain .calculatorSection .calculator .calculatorLine__result {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+}
+.calculatorMain .calculatorSection .calculator .calculatorLine__result p {
+  font-size: 32px;
+  text-align: right;
+}
+.calculatorMain .calculatorSection .calculator .calculatorLine p,
+.calculatorMain .calculatorSection .calculator .calculatorLine button {
+  color: white;
+}
+.calculatorMain .calculatorSection .calculator .calculatorLine button {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  font-size: 18px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.8), -3px -3px 10px 2px rgba(255, 255, 255, 0.2);
+}
+.calculatorMain .calculatorSection .calculator .calculatorLine button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.calculatorMain .calculatorSection .calculator .calculatorLine button:active {
+  font-size: 16px;
+  box-shadow: none;
+}
+.calculatorMain .calculatorSection .calculator .calculatorLine #zero {
+  width: 7rem;
 }
 
 /*# sourceMappingURL=style.css.map */
