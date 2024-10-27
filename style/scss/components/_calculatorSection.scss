@@ -1,0 +1,89 @@
+$marginBtn: 0.5rem;
+$shadow: 3px 3px 10px 2px
+        rgba(
+            $color: black,
+            $alpha: 0.8,
+        ),
+    -3px -3px 10px 2px
+        rgba(
+            $color: white,
+            $alpha: 0.2,
+        );
+$lightWhite: rgba(
+    $color: white,
+    $alpha: 0.1,
+);
+
+.calculatorBody header {
+    background-color: $darkGrey;
+    border-bottom: 1px solid white;
+}
+
+.calculatorMain {
+    min-width: 100vh;
+    min-height: calc(100vh - 6rem);
+    background-color: $darkGrey;
+
+    .calculatorSection {
+        display: flex;
+        justify-content: center;
+
+        .calculator {
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: $shadow;
+
+            .calculatorLine {
+                display: flex;
+
+                &__result {
+                    display: flex;
+                    justify-content: flex-end;
+                    padding: 0.5rem;
+                    margin: $marginBtn;
+                    margin-bottom: 1rem;
+                    background-color: $lightWhite;
+                    border-radius: 0.5rem;
+                    //border: 1px solid red;
+
+                    p {
+                        font-size: 32px;
+                        text-align: right;
+                    }
+                }
+
+                p,
+                button {
+                    color: white;
+                }
+
+                button {
+                    width: 3rem;
+                    height: 3rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: $marginBtn;
+                    font-size: 18px;
+                    background-color: transparent;
+                    border: 0;
+                    border-radius: 0.5rem;
+                    box-shadow: $shadow;
+                }
+
+                button:hover {
+                    background-color: $lightWhite;
+                }
+
+                button:active {
+                    font-size: 16px;
+                    box-shadow: none;
+                }
+
+                #zero {
+                    width: calc(6rem + $marginBtn * 2);
+                }
+            }
+        }
+    }
+}
