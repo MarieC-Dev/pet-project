@@ -22,6 +22,9 @@
 
     form {
         width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 2rem;
         margin-bottom: 2rem;
         border-radius: 1.5rem;
@@ -37,15 +40,19 @@
         }
 
         input {
-            width: 100%;
-            padding: 1rem;
+            width: 80%;
+            padding: 1rem 2rem;
             font-size: 18px;
             border: 1px solid black;
-            border-radius: 5rem;
+            border-radius: 0.5rem;
             text-align: center;
 
             &:focus {
                 outline: none;
+            }
+
+            &::placeholder {
+                font-size: 16px;
             }
         }
     }
