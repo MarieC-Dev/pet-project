@@ -15,12 +15,54 @@
             </a>
         </header>
 
-        <main>
+        <main class="azertypeMain">
             <section class="azertypeSection">
-                <div></div>
+                <div class="titles">
+                    <h2>AzerType</h2>
+                    <p>L'application pour apprendre à écrire plus vite</p>
+                </div>
+                <div class="content">
+                    <p>
+                        Choisissez votre option et tapez la proposition qui
+                        s'affiche dans le champ ci-dessous.
+                    </p>
+
+                    <div class="options">
+                        <div>
+                            <input type="radio" name="words" id="words" />
+                            <label for="words">Mots</label>
+                        </div>
+                        <div>
+                            <input
+                                type="radio"
+                                name="sentences"
+                                id="sentences"
+                            />
+                            <label for="sentences">Phrases</label>
+                        </div>
+                    </div>
+
+                    <p class="chronometer">00 : 00 : 00</p>
+
+                    <h3>Cachalot</h3>
+
+                    <form method="post">
+                        <input
+                            type="text"
+                            name="written"
+                            id="written"
+                            placeholder="Ex : cachalot"
+                        />
+                        <button>Valider</button>
+                    </form>
+
+                    <p class="score">Votre score : <span></span></p>
+
+                    <button class="searchBtn">Partager</button>
+                </div>
             </section>
         </main>
     </body>
 
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/azertype.js"></script>
 </html>
