@@ -314,14 +314,15 @@ header a p {
   justify-content: center;
 }
 .calculatorMain .calculatorSection .calculator {
+  max-width: 320px;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.8), -3px -3px 10px 2px rgba(255, 255, 255, 0.2);
 }
-.calculatorMain .calculatorSection .calculator .calculatorLine {
+.calculatorMain .calculatorSection .calculator .calculatorRow {
   display: flex;
 }
-.calculatorMain .calculatorSection .calculator .calculatorLine__result {
+.calculatorMain .calculatorSection .calculator .calculatorRow__result {
   display: flex;
   justify-content: flex-end;
   padding: 0.5rem;
@@ -330,15 +331,20 @@ header a p {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0.5rem;
 }
-.calculatorMain .calculatorSection .calculator .calculatorLine__result p {
+.calculatorMain .calculatorSection .calculator .calculatorRow__result input {
+  height: 38px;
   font-size: 32px;
   text-align: right;
+  background-color: transparent;
+  color: white;
+  border: 0;
+  pointer-events: none;
 }
-.calculatorMain .calculatorSection .calculator .calculatorLine p,
-.calculatorMain .calculatorSection .calculator .calculatorLine button {
+.calculatorMain .calculatorSection .calculator .calculatorRow p,
+.calculatorMain .calculatorSection .calculator .calculatorRow button {
   color: white;
 }
-.calculatorMain .calculatorSection .calculator .calculatorLine button {
+.calculatorMain .calculatorSection .calculator .calculatorRow button {
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -351,14 +357,14 @@ header a p {
   border-radius: 0.5rem;
   box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.8), -3px -3px 10px 2px rgba(255, 255, 255, 0.2);
 }
-.calculatorMain .calculatorSection .calculator .calculatorLine button:hover {
+.calculatorMain .calculatorSection .calculator .calculatorRow button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.calculatorMain .calculatorSection .calculator .calculatorLine button:active {
+.calculatorMain .calculatorSection .calculator .calculatorRow button:active {
   font-size: 16px;
   box-shadow: none;
 }
-.calculatorMain .calculatorSection .calculator .calculatorLine #zero {
+.calculatorMain .calculatorSection .calculator .calculatorRow #zero {
   width: 7rem;
 }
 

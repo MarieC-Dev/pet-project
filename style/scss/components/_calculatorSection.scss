@@ -29,11 +29,12 @@ $lightWhite: rgba(
         justify-content: center;
 
         .calculator {
+            max-width: 320px;
             padding: 2rem;
             border-radius: 1rem;
             box-shadow: $shadow;
 
-            .calculatorLine {
+            .calculatorRow {
                 display: flex;
 
                 &__result {
@@ -46,9 +47,14 @@ $lightWhite: rgba(
                     border-radius: 0.5rem;
                     //border: 1px solid red;
 
-                    p {
+                    input {
+                        height: 38px;
                         font-size: 32px;
                         text-align: right;
+                        background-color: transparent;
+                        color: white;
+                        border: 0;
+                        pointer-events: none;
                     }
                 }
 

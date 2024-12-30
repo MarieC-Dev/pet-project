@@ -15,43 +15,180 @@
         </header>
         <main class="calculatorMain">
             <section class="calculatorSection">
-                <div class="calculator">
-                    <div class="calculatorLine calculatorLine__result">
-                        <p>0</p>
+                <form name="calculatorForm" class="calculator">
+                    <div class="calculatorRow calculatorRow__result">
+                        <input
+                            type="text"
+                            name="windowResult"
+                            id="windowResult"
+                        />
                     </div>
-                    <div class="calculatorLine calculatorLine__fifth">
-                        <button type="button" name="ac" value="ac">AC</button>
-                        <button type="button" name="-" value="-">+/-</button>
-                        <button type="button" name="%" value="%">%</button>
-                        <button type="button" name="/" value="/">/</button>
+                    <div class="calculatorRow calculatorRow__fifth">
+                        <button
+                            type="button"
+                            name="delete"
+                            value="ac"
+                            onclick="calculationReset()"
+                        >
+                            AC
+                        </button>
+                        <button
+                            type="button"
+                            name="positiveOrNegative"
+                            value="-"
+                            onclick="calculation(positiveOrNegative.value)"
+                        >
+                            +/-
+                        </button>
+                        <button
+                            type="button"
+                            name="percentage"
+                            value="%"
+                            onclick="calculation(percentage.value)"
+                        >
+                            %
+                        </button>
+                        <button
+                            type="button"
+                            name="division"
+                            value="/"
+                            onclick="calculation(division.value)"
+                        >
+                            /
+                        </button>
                     </div>
-                    <div class="calculatorLine calculatorLine__fourth">
-                        <button type="button" name="7" value="7">7</button>
-                        <button type="button" name="8" value="8">8</button>
-                        <button type="button" name="9" value="9">9</button>
-                        <button type="button" name="*" value="*">x</button>
+                    <div class="calculatorRow calculatorRow__fourth">
+                        <button
+                            type="button"
+                            name="b7"
+                            value="7"
+                            onclick="calculation(b7.value)"
+                        >
+                            7
+                        </button>
+                        <button
+                            type="button"
+                            name="b8"
+                            value="8"
+                            onclick="calculation(b8.value)"
+                        >
+                            8
+                        </button>
+                        <button
+                            type="button"
+                            name="b9"
+                            value="9"
+                            onclick="calculation(b9.value)"
+                        >
+                            9
+                        </button>
+                        <button
+                            type="button"
+                            name="multiplication"
+                            value="*"
+                            onclick="calculation(multiplication.value)"
+                        >
+                            x
+                        </button>
                     </div>
-                    <div class="calculatorLine calculatorLine__third">
-                        <button type="button" name="4" value="4">4</button>
-                        <button type="button" name="5" value="5">5</button>
-                        <button type="button" name="6" value="6">6</button>
-                        <button type="button" name="-" value="-">-</button>
+                    <div class="calculatorRow calculatorRow__third">
+                        <button
+                            type="button"
+                            name="b4"
+                            value="4"
+                            onclick="calculation(b4.value)"
+                        >
+                            4
+                        </button>
+                        <button
+                            type="button"
+                            name="b5"
+                            value="5"
+                            onclick="calculation(b5.value)"
+                        >
+                            5
+                        </button>
+                        <button
+                            type="button"
+                            name="b6"
+                            value="6"
+                            onclick="calculation(b6.value)"
+                        >
+                            6
+                        </button>
+                        <button
+                            type="button"
+                            name="substraction"
+                            value="-"
+                            onclick="calculation(substraction.value)"
+                        >
+                            -
+                        </button>
                     </div>
-                    <div class="calculatorLine calculatorLine__second">
-                        <button type="button" name="1" value="1">1</button>
-                        <button type="button" name="2" value="2">2</button>
-                        <button type="button" name="3" value="3">3</button>
-                        <button type="button" name="+" value="+">+</button>
+                    <div class="calculatorRow calculatorRow__second">
+                        <button
+                            type="button"
+                            name="b1"
+                            value="1"
+                            onclick="calculation(b1.value)"
+                        >
+                            1
+                        </button>
+                        <button
+                            type="button"
+                            name="b2"
+                            value="2"
+                            onclick="calculation(b2.value)"
+                        >
+                            2
+                        </button>
+                        <button
+                            type="button"
+                            name="b3"
+                            value="3"
+                            onclick="calculation(b3.value)"
+                        >
+                            3
+                        </button>
+                        <button
+                            type="button"
+                            name="addition"
+                            value="+"
+                            onclick="calculation(addition.value)"
+                        >
+                            +
+                        </button>
                     </div>
-                    <div class="calculatorLine calculatorLine__first">
-                        <button id="zero" type="button" name="0" value="0">
+                    <div class="calculatorRow calculatorRow__first">
+                        <button
+                            id="zero"
+                            type="button"
+                            name="b0"
+                            value="0"
+                            onclick="calculation(b0.value)"
+                        >
                             0
                         </button>
-                        <button type="button" name="." value=".">,</button>
-                        <button type="button" name="=" value="=">=</button>
+                        <button
+                            type="button"
+                            name="point"
+                            value="."
+                            onclick="calculation(point.value)"
+                        >
+                            ,
+                        </button>
+                        <button
+                            type="button"
+                            name="equal"
+                            value="="
+                            onclick="calculationResult()"
+                        >
+                            =
+                        </button>
                     </div>
-                </div>
+                </form>
             </section>
         </main>
     </body>
+    <script src="./scripts/calculator.js"></script>
 </html>
