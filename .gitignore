@@ -1,6 +1,9 @@
 # Jet Brains
 .idea
 
+# Visual Studio Code
+.vscode
+
 # Logs
 logs
 *.log
