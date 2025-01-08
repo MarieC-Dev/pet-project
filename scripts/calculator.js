@@ -1,4 +1,4 @@
-calculatorForm.windowResult.value = 0;
+calculatorForm.windowResult.value = '';
 
 const calculation = (result) => {
     calculatorForm.windowResult.value =
@@ -6,9 +6,10 @@ const calculation = (result) => {
 };
 
 const calculationResult = () => {
-    calculatorForm.windowResult.value = eval(calculatorForm.windowResult.value);
+    calculatorForm.windowResult.value = 
+        Function('"use strict"; return (' + calculatorForm.windowResult.value + ')')();
 };
 
 const calculationReset = () => {
-    calculatorForm.windowResult.value = 0;
+    calculatorForm.windowResult.value = '';
 };
