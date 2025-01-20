@@ -7,7 +7,7 @@ const calculation = (result) => {
 
 const calculationResult = () => {
     calculatorForm.windowResult.value = 
-        Function('"use strict"; return (' + calculatorForm.windowResult.value + ')')();
+        Function('return (' + calculatorForm.windowResult.value + ')')();
 };
 
 const calculationReset = () => {
