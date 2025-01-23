@@ -454,13 +454,13 @@ header a p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
   border: 1px solid black;
 }
 .toDoListMain .contentToDoList table thead td {
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   font-weight: 800;
-  background-color: black;
+  background-color: #0013a1;
   color: white;
 }
 .toDoListMain .contentToDoList table thead td:nth-child(1) div,
@@ -470,12 +470,12 @@ header a p {
 }
 .toDoListMain .contentToDoList table thead td:nth-child(2),
 .toDoListMain .contentToDoList table tbody td:nth-child(2) {
-  width: 200px;
+  width: 300px;
   height: auto;
 }
 .toDoListMain .contentToDoList table thead td:nth-child(3),
 .toDoListMain .contentToDoList table tbody td:nth-child(3) {
-  width: 137px;
+  width: 150px;
 }
 .toDoListMain .contentToDoList table thead td:nth-child(4),
 .toDoListMain .contentToDoList table tbody td:nth-child(4) {
@@ -483,7 +483,10 @@ header a p {
 }
 .toDoListMain .contentToDoList table tbody {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  /* tr:first-child {
+      border: 0;
+  } */
 }
 .toDoListMain .contentToDoList table tbody tr {
   border-bottom: 1px solid black;
@@ -501,7 +504,7 @@ header a p {
   height: 16px;
   margin: 0;
 }
-.toDoListMain .contentToDoList table tbody tr:first-child {
+.toDoListMain .contentToDoList table tbody tr:last-child {
   border: 0;
 }
 .toDoListMain .multiRemoveError {
