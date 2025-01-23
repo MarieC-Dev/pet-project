@@ -368,4 +368,145 @@ header a p {
   width: 7rem;
 }
 
+.headerToDoList {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.toDoListMain {
+  width: 1200px;
+  min-height: calc(100vh - 96px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  margin: 6rem auto 0 auto;
+  /* ===  === */
+  /* === Error === */
+  /* ===  === */
+}
+.toDoListMain .headerMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 4rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  background-color: #0013a1;
+  color: white;
+  border-radius: 1rem;
+  box-shadow: 0px 7px 15px 5px #b6b6b6;
+}
+.toDoListMain .headerMain h2 {
+  margin-bottom: 1rem;
+}
+.toDoListMain .headerMain form {
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.toDoListMain .headerMain form input {
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  font-size: 16px;
+  border: 0;
+  border-radius: 0.5rem;
+  outline: 0;
+}
+.toDoListMain .headerMain form button {
+  background-color: #0013a1;
+  color: white;
+  border: 2px solid white;
+}
+.toDoListMain .headerMain form button:hover {
+  background-color: white;
+  color: #0013a1;
+  border: 2px solid white;
+}
+.toDoListMain button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+.toDoListMain button:hover {
+  background-color: red;
+  color: white;
+  border: 2px solid red;
+}
+.toDoListMain .contentToDoList {
+  padding: 3rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0px 7px 15px 5px #b6b6b6;
+}
+.toDoListMain .contentToDoList table, .toDoListMain .contentToDoList thead, .toDoListMain .contentToDoList tbody {
+  border-collapse: collapse;
+}
+.toDoListMain .contentToDoList table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  border: 1px solid black;
+}
+.toDoListMain .contentToDoList table thead td {
+  padding: 0.5rem 1rem;
+  font-weight: 800;
+  background-color: black;
+  color: white;
+}
+.toDoListMain .contentToDoList table thead td:nth-child(1) div,
+.toDoListMain .contentToDoList table tbody td:nth-child(1) {
+  width: 16px;
+  height: 16px;
+}
+.toDoListMain .contentToDoList table thead td:nth-child(2),
+.toDoListMain .contentToDoList table tbody td:nth-child(2) {
+  width: 200px;
+  height: auto;
+}
+.toDoListMain .contentToDoList table thead td:nth-child(3),
+.toDoListMain .contentToDoList table tbody td:nth-child(3) {
+  width: 137px;
+}
+.toDoListMain .contentToDoList table thead td:nth-child(4),
+.toDoListMain .contentToDoList table tbody td:nth-child(4) {
+  width: 144px;
+}
+.toDoListMain .contentToDoList table tbody {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.toDoListMain .contentToDoList table tbody tr {
+  border-bottom: 1px solid black;
+}
+.toDoListMain .contentToDoList table tbody tr td {
+  padding: 0.5rem 1rem;
+}
+.toDoListMain .contentToDoList table tbody tr td:nth-child(2) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  overflow-wrap: break-word;
+}
+.toDoListMain .contentToDoList table tbody tr td input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+.toDoListMain .contentToDoList table tbody tr:first-child {
+  border: 0;
+}
+.toDoListMain .multiRemoveError {
+  margin: 1rem 0;
+  text-align: center;
+}
+
 /*# sourceMappingURL=style.css.map */

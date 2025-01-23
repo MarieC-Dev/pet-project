@@ -1,14 +1,5 @@
 $marginBtn: 0.5rem;
-$shadow: 3px 3px 10px 2px
-        rgba(
-            $color: black,
-            $alpha: 0.8,
-        ),
-    -3px -3px 10px 2px
-        rgba(
-            $color: white,
-            $alpha: 0.2,
-        );
+
 $lightWhite: rgba(
     $color: white,
     $alpha: 0.1,
@@ -32,7 +23,7 @@ $lightWhite: rgba(
             max-width: 320px;
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: $shadow;
+            box-shadow: $shadowCalculator;
 
             .calculatorRow {
                 display: flex;
@@ -74,7 +65,7 @@ $lightWhite: rgba(
                     background-color: transparent;
                     border: 0;
                     border-radius: 0.5rem;
-                    box-shadow: $shadow;
+                    box-shadow: $shadowCalculator;
                 }
 
                 button:hover {

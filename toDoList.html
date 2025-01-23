@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style/style.css" />
+        <title>calculator</title>
+    </head>
+    <body>
+        <header class="headerToDoList">
+            <a href="/index.html">
+                <img src="./assets/Cute-Dog-icon-2.png" alt="Logo" />
+                <p>Pet Project</p>
+            </a>
+        </header>
+        <main class="toDoListMain">
+            <section class="headerMain">
+                <h2>To Do List</h2>
+    
+                <form name="addTaskForm" method="get">
+                    <label for="addTask">Nom de la tâche :</label>
+                    <input type="text" name="addTask" id="addTask" placeholder="Nom de la tâche" required>
+                    <button onclick="addTaskBtn()" type="button" class="addTask">Ajouter</button>
+                </form>
+                
+                <p class="messageError"></p>
+            </section>
+    
+            <section class="contentToDoList">
+                <button 
+                    onclick="multiRemoveTaskBtn()" 
+                    type="button" 
+                    class="multiRemoveTask">
+                    Supprimer les tâches
+                </button>
+                <p class="multiRemoveError"></p>
+    
+                <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                <div></div>
+                            </td>
+                            <td>Nom de la tâche</td>
+                            <td>État</td>
+                            <td>Supprimer</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </body>
+    <script src="./scripts/toDoList.js"></script>
+</html>

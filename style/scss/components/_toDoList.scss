@@ -1,0 +1,160 @@
+.headerToDoList {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.toDoListMain {
+    width: 1200px;
+    min-height: calc(100vh - 96px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0;
+    margin: 6rem auto 0 auto;
+    
+    .headerMain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 4rem;
+        margin-bottom: 3rem;
+        text-align: center;
+        background-color: $darkColor;
+        color: white;
+        border-radius: 1rem;
+        box-shadow: $shadow;
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        form {
+            min-width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input {
+            padding: .75rem 1rem;
+            margin: 1rem 0;
+            font-size: 16px;
+            border: 0;
+            border-radius: .5rem;
+            outline: 0;
+        }
+        
+        form button {
+            background-color: $darkColor;
+            color: white;
+            border: 2px solid white;
+        }
+        form button:hover {
+            background-color: white;
+            color: $darkColor;
+            border: 2px solid white;
+        }
+    }
+    
+    button {
+        width: 100%;
+        padding: .5rem 1rem;
+        font-size: 16px;
+        background-color: white;
+        color: red;
+        border: 2px solid red;
+        border-radius: 5rem;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: red;
+        color: white;
+        border: 2px solid red;
+    }
+
+    .contentToDoList {
+        padding: 3rem;
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: $shadow;
+
+        table, thead, tbody {
+            border-collapse: collapse;
+        }
+
+        table {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+            border: 1px solid black;
+    
+            thead td {
+                padding: .5rem 1rem;
+                font-weight: 800;
+                background-color: black;
+                color: white;
+            }
+
+            thead td:nth-child(1) div,
+            tbody td:nth-child(1) {
+                width: 16px;
+                height: 16px;
+            }
+            
+            thead td:nth-child(2),
+            tbody td:nth-child(2) {
+                width: 200px;
+                height: auto;
+            }
+            
+            thead td:nth-child(3),
+            tbody td:nth-child(3) {
+                width: 137px;
+            }
+            
+            thead td:nth-child(4),
+            tbody td:nth-child(4) {
+                width: 144px;
+            }
+            
+            tbody {
+                display: flex;
+                flex-direction: column-reverse;
+
+                tr {
+                    border-bottom: 1px solid black;
+
+                    td { padding: .5rem 1rem; }
+        
+                    td:nth-child(2) {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        overflow-wrap: break-word;
+                    }
+                    
+                    td input {
+                        width: 16px;
+                        height: 16px;
+                        margin: 0;
+                    }
+                }
+                
+                tr:first-child {
+                    border: 0;
+                }
+            }
+        }
+    }
+    /* ===  === */
+    
+    /* === Error === */
+    .multiRemoveError {
+        margin: 1rem 0;
+        text-align: center;
+    }
+    /* ===  === */
+}
