@@ -67,18 +67,18 @@ function multiRemoveTaskBtn() {
 
     for (let id = 0; id < flatcheckboxTask.length; id++) {
         const checkboxRowChecked = flatcheckboxTask[id].checked;
-        console.log(checkboxRowChecked);
 
         if(checkboxRowChecked) {
             const idTableRow = document.querySelector(`#tr${id}`);
             idTableRow.remove();
-            multiRemoveError.innerText = ''
+            
+            multiRemoveError.innerText = '';
         } else {
-            multiRemoveError.innerText = 'Sélectionnez une ou plusieurs tâches à supprimer'
+            multiRemoveError.innerText = 'Sélectionnez une ou plusieurs tâches à supprimer';
         }
     }
 
     if(flatcheckboxTask.length === 0) {
-        multiRemoveError.innerText = 'Aucune tâche à supprimer'
+        multiRemoveError.innerText = 'Aucune tâche à supprimer';
     }
 }
