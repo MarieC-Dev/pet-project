@@ -67,7 +67,6 @@ function addTaskBtn() {
 function removeOneTaskBtn(id) {
     let tableRow = document.querySelector(`#tr${id}`);
     tableRow.remove();
-    console.log(arrayIdTableRow);
 }
 
 function multiRemoveTaskBtn() {
