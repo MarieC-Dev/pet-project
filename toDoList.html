@@ -28,12 +28,20 @@
             </section>
     
             <section class="contentToDoList">
-                <button 
-                    onclick="multiRemoveTaskBtn()" 
-                    type="button" 
-                    class="multiRemoveTask">
-                    Supprimer les tâches
-                </button>
+                <div class="btnsRemoveTasks">
+                    <button 
+                        onclick="multiRemoveTasksBtn()" 
+                        type="button" 
+                        class="multiRemoveTasks">
+                        Supprimer la sélection
+                    </button>
+                    <button 
+                        onclick="" 
+                        type="button" 
+                        class="removeFinishedTasks">
+                        Supprimer les tâches terminées
+                    </button>
+                </div>
                 <p class="multiRemoveError"></p>
     
                 <table>

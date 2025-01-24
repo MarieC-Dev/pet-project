@@ -80,6 +80,26 @@
         border-radius: 1rem;
         box-shadow: $shadow;
 
+        .btnsRemoveTasks {
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                width: 48%;
+
+                &:last-child {
+                    background-color: white;
+                    color: $darkColor;
+                    border-color: $darkColor;
+
+                    &:hover {
+                        background-color: $darkColor;
+                        color: white;
+                    }
+                }
+            }
+        }
+
         table, thead, tbody {
             border-collapse: collapse;
         }
