@@ -6,7 +6,7 @@
 }
 
 .toDoListMain {
-    width: 1200px;
+    width: max-content;
     min-height: calc(100vh - 96px);
     display: flex;
     flex-direction: column;
