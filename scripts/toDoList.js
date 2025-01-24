@@ -7,7 +7,7 @@ const multiRemoveError = document.querySelector('.multiRemoveError');
 
 let checkboxTask = [];
 let idTableRow = 0;
-let arrayIdTableRow = []; // save all ids)
+let arrayIdTableRow = []; // save all id (even if there are deleted)
 
 function createTaskComponent(id, inputValue) {
     const tableRow = document.createElement('tr');
@@ -22,7 +22,7 @@ function createTaskComponent(id, inputValue) {
     const selectStateTask = document.createElement('select');
     selectStateTask.setAttribute('name', 'stateTask');
     selectStateTask.setAttribute('id', 'stateTask');
-    selectStateTask.innerHTML = '<option value="waiting">En attente</option> <option value="progress">En cours</option> <option value="finished">Terminée</option>';
+    selectStateTask.innerHTML = '<option value="waiting">---</option> <option value="progress">En cours</option> <option value="finished">Terminée</option>';
 
     tableCell1.innerHTML = `<input type="checkbox" name="task${id}" id="${id}">`;
     paragraph.textContent = inputValue;
@@ -44,8 +44,8 @@ function addTaskBtn() {
     if(inputValue.length > 0) {
         // create task row
         createTaskComponent(idTableRow, inputValue);
-        idTableRow++;
         arrayIdTableRow.push(idTableRow);
+        idTableRow++;
 
         /* multiRemove : get checkbox element and push it in array 'checkboxTask'
             convert NodeList to real array and flat it */
@@ -74,15 +74,14 @@ function multiRemoveTaskBtn() {
     const flatcheckboxTask = checkboxTask.flat();
 
     for (let id = 0; id < flatcheckboxTask.length; id++) {
-        const checkboxRowChecked = flatcheckboxTask[id].checked;
+        let checkboxRowChecked = flatcheckboxTask[id].checked;
 
         if(checkboxRowChecked) {
-            const tableRow = document.querySelector(`#tr${id}`);
-            tableRow.remove();
+            let tableRow = document.querySelector(`#tr${id}`);
             
-            multiRemoveError.innerText = '';
-        } else {
-            multiRemoveError.innerText = 'Sélectionnez une ou plusieurs tâches à supprimer';
+            tableRow.remove();
+
+            flatcheckboxTask[id].checked = false;
         }
     }
     
