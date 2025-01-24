@@ -6,16 +6,18 @@ const msgError = document.querySelector('.messageError');
 const multiRemoveError = document.querySelector('.multiRemoveError');
 
 let checkboxTask = [];
+let idTableRow = 0;
+let saveId = idTableRow;
 
 function addTaskBtn() {
     let inputValue = inputAddTask.value; // input value in new variable
-    let nbChildTableBody = tableBody.childElementCount;
+    //let idTableRow = tableBody.childElementCount;
     inputAddTask.value = ""; // remove input value (original)
     
     if(inputValue.length > 0) {
         // create task row
         const tableRow = document.createElement('tr');
-        tableRow.setAttribute('id', `tr${nbChildTableBody}`);
+        tableRow.setAttribute('id', `tr${idTableRow}`);
 
         const tableCell1 = document.createElement('td');
         const tableCell2 = document.createElement('td');
@@ -28,11 +30,11 @@ function addTaskBtn() {
         selectStateTask.setAttribute('id', 'stateTask');
         selectStateTask.innerHTML = '<option value="waiting">En attente</option> <option value="progress">En cours</option> <option value="finished">Terminée</option>';
 
-        tableCell1.innerHTML = `<input type="checkbox" name="task${nbChildTableBody}" id="${nbChildTableBody}">`;
+        tableCell1.innerHTML = `<input type="checkbox" name="task${idTableRow}" id="${idTableRow}">`;
         paragraph.textContent = inputValue;
         tableCell2.appendChild(paragraph);
         tableCell3.appendChild(selectStateTask);
-        tableCell4.innerHTML = `<button onclick="removeOneTaskBtn(${nbChildTableBody})" type="button" id="${nbChildTableBody}">Supprimer</button>`;
+        tableCell4.innerHTML = `<button onclick="removeOneTaskBtn(${idTableRow})" type="button" id="${idTableRow}">Supprimer</button>`;
 
         tableRow.appendChild(tableCell1);
         tableRow.appendChild(tableCell2);
@@ -47,6 +49,8 @@ function addTaskBtn() {
         checkboxTask.pop(nodeListFromArray);
         checkboxTask.push(nodeListFromArray);
 
+        idTableRow++;        
+
         // Message error
         msgError.style.padding = '0';
         msgError.innerText = '';
@@ -57,9 +61,15 @@ function addTaskBtn() {
     }
 }
 
+console.log(idTableRow);
+
+
 function removeOneTaskBtn(id) {
-    const idTableRow = document.querySelector(`#tr${id}`);
-    idTableRow.remove();
+    let tableRow = document.querySelector(`#tr${id}`);
+    tableRow.remove();
+
+    idTableRow = saveId;
+    console.log(idTableRow);
 }
 
 function multiRemoveTaskBtn() {
@@ -69,14 +79,17 @@ function multiRemoveTaskBtn() {
         const checkboxRowChecked = flatcheckboxTask[id].checked;
 
         if(checkboxRowChecked) {
-            const idTableRow = document.querySelector(`#tr${id}`);
-            idTableRow.remove();
+            const tableRow = document.querySelector(`#tr${id}`);
+            tableRow.remove();
             
             multiRemoveError.innerText = '';
         } else {
             multiRemoveError.innerText = 'Sélectionnez une ou plusieurs tâches à supprimer';
         }
     }
+
+    idTableRow = saveId;
+    console.log(idTableRow);
 
     if(flatcheckboxTask.length === 0) {
         multiRemoveError.innerText = 'Aucune tâche à supprimer';
