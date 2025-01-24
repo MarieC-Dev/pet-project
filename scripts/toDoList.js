@@ -7,7 +7,7 @@ const multiRemoveError = document.querySelector('.multiRemoveError');
 
 let checkboxTask = [];
 let idTableRow = 0;
-let saveId = idTableRow;
+let arrayIdTableRow = []; // save all ids)
 
 function createTaskComponent(id, inputValue) {
     const tableRow = document.createElement('tr');
@@ -35,8 +35,6 @@ function createTaskComponent(id, inputValue) {
     tableRow.appendChild(tableCell3);
     tableRow.appendChild(tableCell4);
     tableBody.appendChild(tableRow);
-
-    id++;   
 }
 
 function addTaskBtn() {
@@ -46,9 +44,11 @@ function addTaskBtn() {
     if(inputValue.length > 0) {
         // create task row
         createTaskComponent(idTableRow, inputValue);
+        idTableRow++;
+        arrayIdTableRow.push(idTableRow);
 
-        // multiRemove : get checkbox element and push it in array 'checkboxTask'
-        // convert NodeList to real array and flat it
+        /* multiRemove : get checkbox element and push it in array 'checkboxTask'
+            convert NodeList to real array and flat it */
         let checkbox = document.querySelectorAll('tbody tr td input');
         let nodeListFromArray = Array.from(checkbox);
         checkboxTask.pop(nodeListFromArray);
@@ -64,15 +64,10 @@ function addTaskBtn() {
     }
 }
 
-console.log(idTableRow);
-
-
 function removeOneTaskBtn(id) {
     let tableRow = document.querySelector(`#tr${id}`);
     tableRow.remove();
-
-    idTableRow = saveId;
-    console.log(idTableRow);
+    console.log(arrayIdTableRow);
 }
 
 function multiRemoveTaskBtn() {
@@ -90,10 +85,7 @@ function multiRemoveTaskBtn() {
             multiRemoveError.innerText = 'Sélectionnez une ou plusieurs tâches à supprimer';
         }
     }
-
-    idTableRow = saveId;
-    console.log(idTableRow);
-
+    
     if(flatcheckboxTask.length === 0) {
         multiRemoveError.innerText = 'Aucune tâche à supprimer';
     }
