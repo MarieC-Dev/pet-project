@@ -9,47 +9,50 @@ let checkboxTask = [];
 let idTableRow = 0;
 let saveId = idTableRow;
 
+function createTaskComponent(id, inputValue) {
+    const tableRow = document.createElement('tr');
+    tableRow.setAttribute('id', `tr${id}`);
+
+    const tableCell1 = document.createElement('td');
+    const tableCell2 = document.createElement('td');
+    const paragraph = document.createElement('p');
+    const tableCell3 = document.createElement('td');
+    const tableCell4 = document.createElement('td');
+
+    const selectStateTask = document.createElement('select');
+    selectStateTask.setAttribute('name', 'stateTask');
+    selectStateTask.setAttribute('id', 'stateTask');
+    selectStateTask.innerHTML = '<option value="waiting">En attente</option> <option value="progress">En cours</option> <option value="finished">Terminée</option>';
+
+    tableCell1.innerHTML = `<input type="checkbox" name="task${id}" id="${id}">`;
+    paragraph.textContent = inputValue;
+    tableCell2.appendChild(paragraph);
+    tableCell3.appendChild(selectStateTask);
+    tableCell4.innerHTML = `<button onclick="removeOneTaskBtn(${id})" type="button" id="${id}">Supprimer</button>`;
+
+    tableRow.appendChild(tableCell1);
+    tableRow.appendChild(tableCell2);
+    tableRow.appendChild(tableCell3);
+    tableRow.appendChild(tableCell4);
+    tableBody.appendChild(tableRow);
+
+    id++;   
+}
+
 function addTaskBtn() {
     let inputValue = inputAddTask.value; // input value in new variable
-    //let idTableRow = tableBody.childElementCount;
     inputAddTask.value = ""; // remove input value (original)
     
     if(inputValue.length > 0) {
         // create task row
-        const tableRow = document.createElement('tr');
-        tableRow.setAttribute('id', `tr${idTableRow}`);
+        createTaskComponent(idTableRow, inputValue);
 
-        const tableCell1 = document.createElement('td');
-        const tableCell2 = document.createElement('td');
-        const paragraph = document.createElement('p');
-        const tableCell3 = document.createElement('td');
-        const tableCell4 = document.createElement('td');
-
-        const selectStateTask = document.createElement('select');
-        selectStateTask.setAttribute('name', 'stateTask');
-        selectStateTask.setAttribute('id', 'stateTask');
-        selectStateTask.innerHTML = '<option value="waiting">En attente</option> <option value="progress">En cours</option> <option value="finished">Terminée</option>';
-
-        tableCell1.innerHTML = `<input type="checkbox" name="task${idTableRow}" id="${idTableRow}">`;
-        paragraph.textContent = inputValue;
-        tableCell2.appendChild(paragraph);
-        tableCell3.appendChild(selectStateTask);
-        tableCell4.innerHTML = `<button onclick="removeOneTaskBtn(${idTableRow})" type="button" id="${idTableRow}">Supprimer</button>`;
-
-        tableRow.appendChild(tableCell1);
-        tableRow.appendChild(tableCell2);
-        tableRow.appendChild(tableCell3);
-        tableRow.appendChild(tableCell4);
-        tableBody.appendChild(tableRow);
-
-        // get checkbox element and push it in array 'checkboxTask'
+        // multiRemove : get checkbox element and push it in array 'checkboxTask'
         // convert NodeList to real array and flat it
         let checkbox = document.querySelectorAll('tbody tr td input');
         let nodeListFromArray = Array.from(checkbox);
         checkboxTask.pop(nodeListFromArray);
-        checkboxTask.push(nodeListFromArray);
-
-        idTableRow++;        
+        checkboxTask.push(nodeListFromArray);     
 
         // Message error
         msgError.style.padding = '0';
