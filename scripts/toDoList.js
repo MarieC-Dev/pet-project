@@ -6,6 +6,7 @@ const msgError = document.querySelector('.messageError');
 const multiRemoveError = document.querySelector('.multiRemoveError');
 
 let checkboxTask = [];
+let selectTask = [];
 let idTableRow = 0;
 let arrayIdTableRow = []; // save all id (even if there are deleted)
 
@@ -21,7 +22,8 @@ function createTaskComponent(id, inputValue) {
 
     const selectStateTask = document.createElement('select');
     selectStateTask.setAttribute('name', 'stateTask');
-    selectStateTask.setAttribute('id', 'stateTask');
+    selectStateTask.setAttribute('id', `select${id}`);
+    selectStateTask.setAttribute('onchange', `statusTask(${id})`);
     selectStateTask.innerHTML = '<option value="waiting">---</option> <option value="progress">En cours</option> <option value="finished">Terminée</option>';
 
     tableCell1.innerHTML = `<input type="checkbox" name="task${id}" id="${id}">`;
@@ -37,6 +39,14 @@ function createTaskComponent(id, inputValue) {
     tableBody.appendChild(tableRow);
 }
 
+// Get the same elements from the tasks row
+function getElements(selector, array) {
+    let nodeListFromArray = Array.from(selector);
+    array.pop(nodeListFromArray);
+    array.push(nodeListFromArray); // Each time a task is created, delete the old ones to add all the tasks present in the to do list
+}
+
+// On button click, add task
 function addTaskBtn() {
     let inputValue = inputAddTask.value; // input value in new variable
     inputAddTask.value = ""; // remove input value (original)
@@ -47,12 +57,11 @@ function addTaskBtn() {
         arrayIdTableRow.push(idTableRow);
         idTableRow++;
 
-        /* multiRemove : get checkbox element and push it in array 'checkboxTask'
-            convert NodeList to real array and flat it */
-        let checkbox = document.querySelectorAll('tbody tr td input');
-        let nodeListFromArray = Array.from(checkbox);
-        checkboxTask.pop(nodeListFromArray);
-        checkboxTask.push(nodeListFromArray);     
+        // get checkbox - remove all tasks selected on click
+        getElements(document.querySelectorAll('tbody tr td input[type=checkbox]'), checkboxTask);
+
+        // get select - remove all tasks finised on click
+        getElements(document.querySelectorAll('tbody tr td select'), selectTask);
 
         // Message error
         msgError.style.padding = '0';
@@ -64,27 +73,65 @@ function addTaskBtn() {
     }
 }
 
+// Remove one task on button click
 function removeOneTaskBtn(id) {
     let tableRow = document.querySelector(`#tr${id}`);
     tableRow.remove();
 }
 
-function multiRemoveTaskBtn() {
-    const flatcheckboxTask = checkboxTask.flat();
+function multiRemoveTasksBtn() {
+    const flatCheckboxTask = checkboxTask.flat();
 
-    for (let id = 0; id < flatcheckboxTask.length; id++) {
-        let checkboxRowChecked = flatcheckboxTask[id].checked;
-
+    for (let id = 0; id < flatCheckboxTask.length; id++) {
+        let checkboxRowChecked = flatCheckboxTask[id].checked;
+        
         if(checkboxRowChecked) {
             let tableRow = document.querySelector(`#tr${id}`);
-            
             tableRow.remove();
 
-            flatcheckboxTask[id].checked = false;
+            flatCheckboxTask[id].checked = false;
         }
     }
     
-    if(flatcheckboxTask.length === 0) {
+    if(flatCheckboxTask.length === 0) {
         multiRemoveError.innerText = 'Aucune tâche à supprimer';
     }
+}
+
+function statusTask(id) {
+    let tableRow = document.querySelector(`#tr${id}`);
+    let select = document.querySelector(`#select${id}`);
+
+    if(select.value === 'progress') {
+        tableRow.style.backgroundColor = 'orange';
+    } else if(select.value === 'finished') {
+        tableRow.style.backgroundColor = '#00d600';
+    } else {
+        tableRow.style.backgroundColor = 'white';
+    }
+}
+
+function removeFinishedTasksBtn() {
+    const flatSelectTask = selectTask.flat();
+    console.log('-----');
+
+    for (let i = 0; i < flatSelectTask.length; i++) {
+        let selectStatus = flatSelectTask[i].value;
+        let tableRow = document.querySelector(`#tr${i}`);
+
+        //console.log('List : ' + i);
+        
+        if(selectStatus === 'finished' && tableRow) {
+            console.log('ID : ' + i);
+            
+            tableRow.remove();
+        }
+    }
+    
+    if(flatSelectTask.length === 0) {
+        multiRemoveError.innerText = 'Aucune tâche à supprimer';
+    }
+
+    console.log(flatSelectTask);
+    console.log('-----');
 }
